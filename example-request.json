@@ -1,0 +1,1239 @@
+{
+  "input": {
+    "workflow": {
+      "22": {
+        "inputs": {
+          "filename": "flux2-vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "23": {
+        "inputs": {
+          "filename": "flux-2-klein-9b-nvfp4.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "24": {
+        "inputs": {
+          "filename": "qwen_3_8b_fp8mixed.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "25": {
+        "inputs": {
+          "text": "remove any logo, icon, watermark, branding or text"
+        },
+        "class_type": "PrimitiveStringMultiline",
+        "_meta": {
+          "title": "Overall prompt"
+        }
+      },
+      "26": {
+        "inputs": {
+          "text": ""
+        },
+        "class_type": "PrimitiveStringMultiline",
+        "_meta": {
+          "title": "Per segment prompt"
+        }
+      },
+      "27": {
+        "inputs": {
+          "any_1": [
+            "31",
+            0
+          ],
+          "any_2": [
+            "32",
+            0
+          ]
+        },
+        "class_type": "easy batchAnything",
+        "_meta": {
+          "title": "easy batchAnything"
+        }
+      },
+      "28": {
+        "inputs": {
+          "any_1": [
+            "33",
+            0
+          ],
+          "any_2": [
+            "30",
+            0
+          ]
+        },
+        "class_type": "easy batchAnything",
+        "_meta": {
+          "title": "easy batchAnything"
+        }
+      },
+      "29": {
+        "inputs": {
+          "any_1": [
+            "28",
+            0
+          ],
+          "any_2": [
+            "27",
+            0
+          ]
+        },
+        "class_type": "easy batchAnything",
+        "_meta": {
+          "title": "easy batchAnything"
+        }
+      },
+      "30": {
+        "inputs": {
+          "value": false
+        },
+        "class_type": "PrimitiveBoolean",
+        "_meta": {
+          "title": "2"
+        }
+      },
+      "31": {
+        "inputs": {
+          "value": false
+        },
+        "class_type": "PrimitiveBoolean",
+        "_meta": {
+          "title": "3"
+        }
+      },
+      "32": {
+        "inputs": {
+          "value": false
+        },
+        "class_type": "PrimitiveBoolean",
+        "_meta": {
+          "title": "4"
+        }
+      },
+      "33": {
+        "inputs": {
+          "value": false
+        },
+        "class_type": "PrimitiveBoolean",
+        "_meta": {
+          "title": "1"
+        }
+      },
+      "34": {
+        "inputs": {
+          "image": "009.jpg"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "Input Image"
+        }
+      },
+      "35": {
+        "inputs": {
+          "masks_a": [
+            "45",
+            2
+          ],
+          "masks_b": [
+            "36",
+            0
+          ]
+        },
+        "class_type": "Masks Add",
+        "_meta": {
+          "title": "Masks Add"
+        }
+      },
+      "36": {
+        "inputs": {
+          "value": 0,
+          "any": [
+            "45",
+            3
+          ],
+          "index": [
+            "45",
+            1
+          ]
+        },
+        "class_type": "easy indexAnything",
+        "_meta": {
+          "title": "easy indexAnything"
+        }
+      },
+      "37": {
+        "inputs": {
+          "flow": [
+            "45",
+            0
+          ],
+          "initial_value1": [
+            "35",
+            0
+          ],
+          "initial_value2": [
+            "45",
+            3
+          ]
+        },
+        "class_type": "easy forLoopEnd",
+        "_meta": {
+          "title": "easy forLoopEnd"
+        }
+      },
+      "38": {
+        "inputs": {
+          "value": 120,
+          "mask": [
+            "49",
+            1
+          ]
+        },
+        "class_type": "GrowMaskWithBlur",
+        "_meta": {
+          "title": "GrowMaskWithBlur"
+        }
+      },
+      "39": {
+        "inputs": {
+          "text": "red",
+          "image": [
+            "50",
+            0
+          ]
+        },
+        "class_type": "ImageToMask",
+        "_meta": {
+          "title": "ImageToMask"
+        }
+      },
+      "40": {
+        "inputs": {
+          "batch": [
+            "47",
+            1
+          ]
+        },
+        "class_type": "BatchCount+",
+        "_meta": {
+          "title": "BatchCount+"
+        }
+      },
+      "41": {
+        "inputs": {
+          "value": true,
+          "on_true": [
+            "48",
+            0
+          ],
+          "on_false": [
+            "42",
+            0
+          ]
+        },
+        "class_type": "Switch mask [Crystools]",
+        "_meta": {
+          "title": "Selective masks"
+        }
+      },
+      "42": {
+        "inputs": {
+          "masks_a": [
+            "39",
+            0
+          ],
+          "masks_b": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "Masks Subtract",
+        "_meta": {
+          "title": "Selected"
+        }
+      },
+      "43": {
+        "inputs": {
+          "mask": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "MaskToImage",
+        "_meta": {
+          "title": "MaskToImage"
+        }
+      },
+      "44": {
+        "inputs": {
+          "batch": [
+            "41",
+            0
+          ]
+        },
+        "class_type": "BatchCount+",
+        "_meta": {
+          "title": "BatchCount+"
+        }
+      },
+      "45": {
+        "inputs": {
+          "value": 1,
+          "initial_value1": [
+            "46",
+            0
+          ],
+          "total": [
+            "40",
+            0
+          ],
+          "initial_value2": [
+            "47",
+            1
+          ]
+        },
+        "class_type": "easy forLoopStart",
+        "_meta": {
+          "title": "easy forLoopStart"
+        }
+      },
+      "46": {
+        "inputs": {
+          "size_as": [
+            "133",
+            0
+          ]
+        },
+        "class_type": "21166b08-92fa-4b01-9981-d22c006bc085",
+        "_meta": {
+          "title": "21166b08-92fa-4b01-9981-d22c006bc085"
+        }
+      },
+      "47": {
+        "inputs": {
+          "text": "",
+          "image": [
+            "133",
+            0
+          ]
+        },
+        "class_type": "SAM3Segment",
+        "_meta": {
+          "title": "SAM3Segment"
+        }
+      },
+      "48": {
+        "inputs": {
+          "masks_a": [
+            "38",
+            0
+          ],
+          "masks_b": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "Masks Subtract",
+        "_meta": {
+          "title": "All"
+        }
+      },
+      "49": {
+        "inputs": {
+          "text": "watermark",
+          "image": [
+            "133",
+            0
+          ]
+        },
+        "class_type": "SAM3Segment",
+        "_meta": {
+          "title": "SAM3Segment"
+        }
+      },
+      "50": {
+        "inputs": {
+          "text": "",
+          "images": [
+            "43",
+            0
+          ]
+        },
+        "class_type": "GetImagesFromBatchIndexed",
+        "_meta": {
+          "title": "Select mask"
+        }
+      },
+      "55": {
+        "inputs": {
+          "image": [
+            "88",
+            3
+          ],
+          "mask": [
+            "87",
+            0
+          ]
+        },
+        "class_type": "ImageCropByMask",
+        "_meta": {
+          "title": "ImageCropByMask"
+        }
+      },
+      "56": {
+        "inputs": {
+          "value": 2,
+          "any": [
+            "88",
+            5
+          ],
+          "index": [
+            "88",
+            1
+          ]
+        },
+        "class_type": "easy indexAnything",
+        "_meta": {
+          "title": "Index character"
+        }
+      },
+      "57": {
+        "inputs": {
+          "stitcher": [
+            "91",
+            0
+          ],
+          "inpainted_image": [
+            "79",
+            0
+          ]
+        },
+        "class_type": "InpaintStitchImproved",
+        "_meta": {
+          "title": "InpaintStitchImproved"
+        }
+      },
+      "58": {
+        "inputs": {
+          "value": 1,
+          "model": [
+            "23",
+            0
+          ],
+          "samples": [
+            "72",
+            2
+          ],
+          "mask": [
+            "91",
+            2
+          ]
+        },
+        "class_type": "DifferentialDiffusionAdvanced",
+        "_meta": {
+          "title": "DifferentialDiffusionAdvanced"
+        }
+      },
+      "59": {
+        "inputs": {
+          "value": 489721532384960
+        },
+        "class_type": "Seed",
+        "_meta": {
+          "title": "Seed"
+        }
+      },
+      "60": {
+        "inputs": {
+          "value": true,
+          "on_true": [
+            "59",
+            3
+          ],
+          "on_false": [
+            "66",
+            0
+          ]
+        },
+        "class_type": "Switch any [Crystools]",
+        "_meta": {
+          "title": "Switch any [Crystools]"
+        }
+      },
+      "61": {
+        "inputs": {
+          "text": [
+            "62",
+            0
+          ],
+          "clip": [
+            "24",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "Positive"
+        }
+      },
+      "62": {
+        "inputs": {
+          "text": "",
+          "string_a": [
+            "25",
+            0
+          ],
+          "multiline_text": [
+            "26",
+            0
+          ],
+          "index": [
+            "88",
+            1
+          ]
+        },
+        "class_type": "bc0ec651-a3ac-46a5-9cf6-85b1b7516fa9",
+        "_meta": {
+          "title": "bc0ec651-a3ac-46a5-9cf6-85b1b7516fa9"
+        }
+      },
+      "63": {
+        "inputs": {
+          "value": 1,
+          "conditioning": [
+            "61",
+            0
+          ]
+        },
+        "class_type": "FluxGuidance",
+        "_meta": {
+          "title": "FluxGuidance"
+        }
+      },
+      "64": {
+        "inputs": {
+          "pixels": [
+            "91",
+            1
+          ],
+          "vae": [
+            "22",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "Crop"
+        }
+      },
+      "65": {
+        "inputs": {
+          "pixels": [
+            "56",
+            0
+          ],
+          "vae": [
+            "22",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "Character"
+        }
+      },
+      "66": {
+        "inputs": {
+          "value": 929756939539301
+        },
+        "class_type": "PrimitiveInt",
+        "_meta": {
+          "title": "Manual seed"
+        }
+      },
+      "67": {
+        "inputs": {
+          "conditioning": [
+            "63",
+            0
+          ],
+          "latent": [
+            "64",
+            0
+          ]
+        },
+        "class_type": "ReferenceLatent",
+        "_meta": {
+          "title": "reference"
+        }
+      },
+      "68": {
+        "inputs": {
+          "conditioning": [
+            "67",
+            0
+          ],
+          "latent": [
+            "65",
+            0
+          ]
+        },
+        "class_type": "ReferenceLatent",
+        "_meta": {
+          "title": "reference"
+        }
+      },
+      "69": {
+        "inputs": {
+          "value": true,
+          "on_true": [
+            "68",
+            0
+          ],
+          "on_false": [
+            "67",
+            0
+          ],
+          "boolean": [
+            "92",
+            0
+          ]
+        },
+        "class_type": "Switch any [Crystools]",
+        "_meta": {
+          "title": "Switch any [Crystools]"
+        }
+      },
+      "70": {
+        "inputs": {
+          "masks_a": [
+            "87",
+            0
+          ],
+          "masks_b": [
+            "88",
+            4
+          ]
+        },
+        "class_type": "Masks Subtract",
+        "_meta": {
+          "title": "Masks Subtract"
+        }
+      },
+      "71": {
+        "inputs": {
+          "image": [
+            "133",
+            0
+          ]
+        },
+        "class_type": "GetImageSize",
+        "_meta": {
+          "title": "GetImageSize"
+        }
+      },
+      "72": {
+        "inputs": {
+          "value": true,
+          "positive": [
+            "69",
+            0
+          ],
+          "negative": [
+            "89",
+            0
+          ],
+          "vae": [
+            "22",
+            0
+          ],
+          "pixels": [
+            "91",
+            1
+          ],
+          "mask": [
+            "91",
+            2
+          ]
+        },
+        "class_type": "InpaintModelConditioning",
+        "_meta": {
+          "title": "InpaintModelConditioning"
+        }
+      },
+      "73": {
+        "inputs": {
+          "value": 0,
+          "image": [
+            "90",
+            1
+          ],
+          "b": [
+            "74",
+            0
+          ]
+        },
+        "class_type": "581127f2-8385-4685-8095-4dfe38c2a452",
+        "_meta": {
+          "title": "581127f2-8385-4685-8095-4dfe38c2a452"
+        }
+      },
+      "74": {
+        "inputs": {
+          "value": 1
+        },
+        "class_type": "easy float",
+        "_meta": {
+          "title": "easy float"
+        }
+      },
+      "75": {
+        "inputs": {
+          "text": "euler_ancestral"
+        },
+        "class_type": "KSamplerSelect",
+        "_meta": {
+          "title": "KSamplerSelect"
+        }
+      },
+      "76": {
+        "inputs": {
+          "value": 617246929445563,
+          "noise_seed": [
+            "60",
+            0
+          ]
+        },
+        "class_type": "RandomNoise",
+        "_meta": {
+          "title": "RandomNoise"
+        }
+      },
+      "77": {
+        "inputs": {
+          "value": true,
+          "on_true": [
+            "81",
+            0
+          ],
+          "on_false": [
+            "78",
+            0
+          ]
+        },
+        "class_type": "Switch any [Crystools]",
+        "_meta": {
+          "title": "Switch any [Crystools]"
+        }
+      },
+      "78": {
+        "inputs": {
+          "value": 6,
+          "model": [
+            "58",
+            0
+          ]
+        },
+        "class_type": "BetaSamplingScheduler",
+        "_meta": {
+          "title": "BetaSamplingScheduler"
+        }
+      },
+      "79": {
+        "inputs": {
+          "samples": [
+            "82",
+            0
+          ],
+          "vae": [
+            "22",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "80": {
+        "inputs": {
+          "model": [
+            "58",
+            0
+          ],
+          "conditioning": [
+            "72",
+            0
+          ]
+        },
+        "class_type": "BasicGuider",
+        "_meta": {
+          "title": "BasicGuider"
+        }
+      },
+      "81": {
+        "inputs": {
+          "value": 6,
+          "width": [
+            "71",
+            0
+          ],
+          "height": [
+            "71",
+            1
+          ]
+        },
+        "class_type": "Flux2Scheduler",
+        "_meta": {
+          "title": "Flux2Scheduler"
+        }
+      },
+      "82": {
+        "inputs": {
+          "noise": [
+            "85",
+            0
+          ],
+          "guider": [
+            "80",
+            0
+          ],
+          "sampler": [
+            "75",
+            0
+          ],
+          "sigmas": [
+            "78",
+            0
+          ],
+          "latent_image": [
+            "58",
+            1
+          ]
+        },
+        "class_type": "SamplerCustomAdvanced",
+        "_meta": {
+          "title": "SamplerCustomAdvanced"
+        }
+      },
+      "83": {
+        "inputs": {
+          "text": "simple",
+          "model": [
+            "58",
+            0
+          ]
+        },
+        "class_type": "BasicScheduler",
+        "_meta": {
+          "title": "BasicScheduler"
+        }
+      },
+      "84": {
+        "inputs": {
+          "flow": [
+            "88",
+            0
+          ],
+          "initial_value1": [
+            "88",
+            2
+          ],
+          "initial_value2": [
+            "57",
+            0
+          ],
+          "initial_value3": [
+            "88",
+            4
+          ],
+          "initial_value4": [
+            "88",
+            5
+          ]
+        },
+        "class_type": "easy forLoopEnd",
+        "_meta": {
+          "title": "easy forLoopEnd"
+        }
+      },
+      "85": {
+        "inputs": {
+          "value": 650934300962639,
+          "noise_seed": [
+            "60",
+            0
+          ]
+        },
+        "class_type": "RandomNoise",
+        "_meta": {
+          "title": "RandomNoise"
+        }
+      },
+      "86": {
+        "inputs": {
+          "input_default": [
+            "81",
+            0
+          ],
+          "input_2": [
+            "78",
+            0
+          ],
+          "input_3": [
+            "83",
+            0
+          ]
+        },
+        "class_type": "614c01ac-b317-4523-bded-9c497929ead9",
+        "_meta": {
+          "title": "614c01ac-b317-4523-bded-9c497929ead9"
+        }
+      },
+      "87": {
+        "inputs": {
+          "value": 2,
+          "any": [
+            "88",
+            2
+          ],
+          "index": [
+            "88",
+            1
+          ]
+        },
+        "class_type": "easy indexAnything",
+        "_meta": {
+          "title": "Index mask"
+        }
+      },
+      "88": {
+        "inputs": {
+          "value": 1,
+          "initial_value1": [
+            "41",
+            0
+          ],
+          "total": [
+            "44",
+            0
+          ],
+          "initial_value2": [
+            "133",
+            0
+          ],
+          "initial_value3": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "easy forLoopStart",
+        "_meta": {
+          "title": "easy forLoopStart"
+        }
+      },
+      "89": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "24",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "Negative"
+        }
+      },
+      "90": {
+        "inputs": {
+          "text": "lanczos",
+          "image": [
+            "88",
+            3
+          ],
+          "mask": [
+            "70",
+            0
+          ]
+        },
+        "class_type": "InpaintCropImproved",
+        "_meta": {
+          "title": "InpaintCropImproved"
+        }
+      },
+      "91": {
+        "inputs": {
+          "text": "lanczos",
+          "image": [
+            "88",
+            3
+          ],
+          "mask": [
+            "70",
+            0
+          ],
+          "output_target_width": [
+            "73",
+            0
+          ],
+          "output_target_height": [
+            "73",
+            1
+          ]
+        },
+        "class_type": "InpaintCropImproved",
+        "_meta": {
+          "title": "InpaintCropImproved"
+        }
+      },
+      "92": {
+        "inputs": {
+          "value": 5,
+          "a": [
+            "88",
+            1
+          ],
+          "any": [
+            "29",
+            0
+          ]
+        },
+        "class_type": "ea413e16-3892-4233-83ea-4a76dc529c71",
+        "_meta": {
+          "title": "ea413e16-3892-4233-83ea-4a76dc529c71"
+        }
+      },
+      "98": {
+        "inputs": {
+          "value": 5,
+          "image": [
+            "34",
+            0
+          ]
+        },
+        "class_type": "NearestQwenResolution",
+        "_meta": {
+          "title": "NearestQwenResolution"
+        }
+      },
+      "99": {
+        "inputs": {
+          "values.value0": [
+            "98",
+            0
+          ],
+          "values.value1": [
+            "98",
+            1
+          ]
+        },
+        "class_type": "MathMax",
+        "_meta": {
+          "title": "MathMax"
+        }
+      },
+      "100": {
+        "inputs": {
+          "value": 512,
+          "image": [
+            "102",
+            0
+          ],
+          "width": [
+            "98",
+            0
+          ],
+          "height": [
+            "98",
+            1
+          ]
+        },
+        "class_type": "ImageResizeKJv2",
+        "_meta": {
+          "title": "ImageResizeKJv2"
+        }
+      },
+      "101": {
+        "inputs": {
+          "images": [
+            "136",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "102": {
+        "inputs": {
+          "value": 1692775621,
+          "image": [
+            "84",
+            1
+          ],
+          "dit": [
+            "103",
+            0
+          ],
+          "vae": [
+            "104",
+            0
+          ],
+          "resolution": [
+            "129",
+            0
+          ]
+        },
+        "class_type": "SeedVR2VideoUpscaler",
+        "_meta": {
+          "title": "Upscaler"
+        }
+      },
+      "103": {
+        "inputs": {
+          "filename": "seedvr2_ema_7b_fp8_e4m3fn_mixed_block35_fp16.safetensors"
+        },
+        "class_type": "SeedVR2LoadDiTModel",
+        "_meta": {
+          "title": "SeedVR2LoadDiTModel"
+        }
+      },
+      "104": {
+        "inputs": {
+          "filename": "ema_vae_fp16.safetensors"
+        },
+        "class_type": "SeedVR2LoadVAEModel",
+        "_meta": {
+          "title": "SeedVR2LoadVAEModel"
+        }
+      },
+      "129": {
+        "inputs": {
+          "values.value0": [
+            "98",
+            0
+          ],
+          "values.value1": [
+            "98",
+            1
+          ]
+        },
+        "class_type": "MathMin",
+        "_meta": {
+          "title": "MathMin"
+        }
+      },
+      "130": {
+        "inputs": {
+          "values.value0": [
+            "134",
+            0
+          ],
+          "values.value1": [
+            "129",
+            0
+          ]
+        },
+        "class_type": "MathMin",
+        "_meta": {
+          "title": "MathMin"
+        }
+      },
+      "131": {
+        "inputs": {
+          "image": [
+            "34",
+            0
+          ]
+        },
+        "class_type": "GetImageSize",
+        "_meta": {
+          "title": "GetImageSize"
+        }
+      },
+      "132": {
+        "inputs": {
+          "values.value0": [
+            "131",
+            0
+          ],
+          "values.value1": [
+            "131",
+            1
+          ]
+        },
+        "class_type": "MathMax",
+        "_meta": {
+          "title": "MathMax"
+        }
+      },
+      "133": {
+        "inputs": {
+          "value": 512,
+          "images": [
+            "34",
+            0
+          ],
+          "shorter_edge": [
+            "130",
+            0
+          ]
+        },
+        "class_type": "ResizeImagesByShorterEdge",
+        "_meta": {
+          "title": "ResizeImagesByShorterEdge"
+        }
+      },
+      "134": {
+        "inputs": {
+          "values.value0": [
+            "131",
+            0
+          ],
+          "values.value1": [
+            "131",
+            1
+          ]
+        },
+        "class_type": "MathMin",
+        "_meta": {
+          "title": "MathMin"
+        }
+      },
+      "136": {
+        "inputs": {
+          "value": 512,
+          "image": [
+            "102",
+            0
+          ],
+          "width": [
+            "98",
+            0
+          ],
+          "height": [
+            "98",
+            1
+          ]
+        },
+        "class_type": "ImageResize+",
+        "_meta": {
+          "title": "ImageResize+"
+        }
+      }
+    }
+  }
+}
