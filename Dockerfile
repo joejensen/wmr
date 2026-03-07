@@ -14,11 +14,11 @@ RUN comfy node install --exit-on-fail comfyui-logicmath@0.1.0
 RUN git clone https://github.com/DenRakEiw/ComfyUI-nearest-qwen-resolution /comfyui/custom_nodes/ComfyUI-nearest-qwen-resolution
 
 # download models into comfyui
-RUN comfy model download --url https://huggingface.co/numz/SeedVR2_comfyUI/resolve/main/ema_vae_fp16.safetensors --relative-path models/vae --filename ema_vae_fp16.safetensors
-RUN comfy model download --url https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors --relative-path models/vae --filename flux2-vae.safetensors
-# RUN # Could not find URL for seedvr2_ema_7b_fp8_e4m3fn_mixed_block35_fp16.safetensors
-RUN comfy model download --url https://huggingface.co/black-forest-labs/FLUX.2-klein-9b-nvfp4/resolve/main/flux-2-klein-9b-nvfp4.safetensors --relative-path models/diffusion_models --filename flux-2-klein-9b-nvfp4.safetensors
-RUN comfy model download --url https://huggingface.co/Comfy-Org/vae-text-encorder-for-flux-klein-9b/resolve/main/split_files/text_encoders/qwen_3_8b_fp8mixed.safetensors --relative-path models/clip --filename qwen_3_8b_fp8mixed.safetensors
+#RUN comfy model download --url https://huggingface.co/numz/SeedVR2_comfyUI/resolve/main/ema_vae_fp16.safetensors --relative-path models/vae --filename ema_vae_fp16.safetensors
+#RUN comfy model download --url https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors --relative-path models/vae --filename flux2-vae.safetensors
+#RUN # Could not find URL for seedvr2_ema_7b_fp8_e4m3fn_mixed_block35_fp16.safetensors
+#RUN comfy model download --url https://huggingface.co/black-forest-labs/FLUX.2-klein-9b-nvfp4/resolve/main/flux-2-klein-9b-nvfp4.safetensors --relative-path models/diffusion_models --filename flux-2-klein-9b-nvfp4.safetensors
+#RUN comfy model download --url https://huggingface.co/Comfy-Org/vae-text-encorder-for-flux-klein-9b/resolve/main/split_files/text_encoders/qwen_3_8b_fp8mixed.safetensors --relative-path models/clip --filename qwen_3_8b_fp8mixed.safetensors
 
 # copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
 # COPY input/ /comfyui/input/
