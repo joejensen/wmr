@@ -7,13 +7,13 @@ RUN comfy node update all
 # install custom nodes into comfyui (first node with --mode remote to fetch updated cache)
 RUN comfy node install --exit-on-fail comfyui-easy-use@1.3.6 --mode remote
 RUN comfy node install --exit-on-fail was-ns@3.0.1
-RUN comfy node install --exit-on-fail comfyui-crystools@1.27.4
 RUN comfy node install --exit-on-fail comfyui_essentials@1.1.0
 RUN comfy node install --exit-on-fail comfyui-kjnodes@1.3.3
 RUN comfy node install --exit-on-fail comfyui-inpaint-cropandstitch@3.0.8
 RUN comfy node install --exit-on-fail comfyui-rmbg@3.0.0
 RUN comfy node install --exit-on-fail comfyui_layerstyle@2.0.38
 RUN comfy node install --exit-on-fail seedvr2_videoupscaler@2.5.24
+RUN git clone https://github.com/crystian/ComfyUI-Crystools /comfyui/custom_nodes/comfyui-crystools
 RUN git clone https://github.com/silveroxides/ComfyUI-LogicMath /comfyui/custom_nodes/comfyui-logicmath
 RUN git clone https://github.com/BadCafeCode/masquerade-nodes-comfyui /comfyui/custom_nodes/masquerade-nodes-comfyui
 RUN git clone https://github.com/HavocsCall/CMFY-HavocsCall-Custom-Nodes /comfyui/custom_nodes/CMFY-HavocsCall-Custom-Nodes
