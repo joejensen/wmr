@@ -19,6 +19,7 @@ RUN git clone https://github.com/BadCafeCode/masquerade-nodes-comfyui /confyui/c
 RUN git clone https://github.com/HavocsCall/CMFY-HavocsCall-Custom-Nodes /comfyui/custom_nodes/CMFY-HavocsCall-Custom-Nodes
 RUN git clone https://github.com/DenRakEiw/ComfyUI-nearest-qwen-resolution /comfyui/custom_nodes/ComfyUI-nearest-qwen-resolution
 
+# update again
 RUN comfy node update all
 
 # download models into comfyui
