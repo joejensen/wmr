@@ -14,7 +14,7 @@ RUN comfy node install --exit-on-fail comfyui-rmbg@3.0.0
 RUN comfy node install --exit-on-fail comfyui_layerstyle@2.0.38
 RUN comfy node install --exit-on-fail seedvr2_videoupscaler@2.5.24
 RUN git clone https://github.com/crystian/ComfyUI-Crystools /comfyui/custom_nodes/comfyui-crystools
-RUN pip install -r /comfyui/custom_nodes/comfyui-crystools/requirements.txt
+RUN uv pip install -r /comfyui/custom_nodes/comfyui-crystools/requirements.txt
 RUN git clone https://github.com/silveroxides/ComfyUI-LogicMath /comfyui/custom_nodes/comfyui-logicmath
 RUN git clone https://github.com/BadCafeCode/masquerade-nodes-comfyui /comfyui/custom_nodes/masquerade-nodes-comfyui
 RUN git clone https://github.com/HavocsCall/CMFY-HavocsCall-Custom-Nodes /comfyui/custom_nodes/CMFY-HavocsCall-Custom-Nodes
