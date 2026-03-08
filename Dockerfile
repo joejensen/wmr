@@ -12,7 +12,7 @@ RUN comfy node install --exit-on-fail comfyui_essentials@1.1.0
 RUN comfy node install --exit-on-fail comfyui-kjnodes@1.3.3
 RUN comfy node install --exit-on-fail comfyui-inpaint-cropandstitch@3.0.8
 RUN comfy node install --exit-on-fail comfyui-rmbg@3.0.0
-RUN comfy node install --exit-on-fail comfyui-layerstyle@2.0.38
+RUN comfy node install --exit-on-fail comfyui-layerstyle
 RUN comfy node install --exit-on-fail seedvr2_videoupscaler@2.5.24
 RUN comfy node install --exit-on-fail comfyui-logicmath@0.1.0
 RUN git clone https://github.com/BadCafeCode/masquerade-nodes-comfyui /confyui/custom_nodes/masquerade-nodes-comfyui
